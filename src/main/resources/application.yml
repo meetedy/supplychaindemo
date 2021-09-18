@@ -1,0 +1,37 @@
+---
+server:
+  port: 8081
+  contextPath: /SpringBootCRUDApp
+---
+spring:
+  profiles: local, default
+datasource:
+  sampleapp:
+    url: jdbc:oracle:thin:@//10.40.143.16:1522/OFSS
+    username: FO_18_1_ST_APP
+    password: FO_18_1_ST_APP
+    driverClassName: oracle.jdbc.OracleDriver
+    defaultSchema:
+    maxPoolSize: 20
+    hibernate:
+      hbm2ddl.method: update
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.Oracle12cDialect
+---
+spring:
+  profiles: prod
+datasource:
+  sampleapp:
+    url: jdbc:oracle:thin:@//10.40.143.16:1522/OFSS
+    username: FO_18_1_ST_APP
+    password: FO_18_1_ST_APP
+    driverClassName: oracle.jdbc.OracleDriver
+    defaultSchema:
+    maxPoolSize: 20
+    hibernate:
+      hbm2ddl.method: update
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.Oracle12cDialect
+
